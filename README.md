@@ -12,14 +12,21 @@ TCP Trace uses three [eBPF](https://ebpf.io/what-is-ebpf/) programs to hook into
 
 ## Build
 
-TCP Trace consists of two parts; eBPF objects (programs, maps) and a user-space program. User-space program uses [libebpf-bootsrap](https://github.com/libbpf/libbpf-bootstrap) to load and attach eBPF objects into the kernel. After being loaded, eBPF programs and maps completely run in the kernel space (crazy efficient!). Since eBPF maps are reachable from the userspace,   
+TCP Trace consists of two parts; eBPF objects (programs, maps) and a user-space program. User-space program uses [libebpf-bootsrap](https://github.com/libbpf/libbpf-bootstrap) to load and attach eBPF objects into the kernel. After being loaded, eBPF programs and maps completely run in the kernel space (crazy efficient!). Since eBPF maps are reachable from the userspace, It is very easy to share data between eBPF programs and the user-space application.
+
+![image](https://user-images.githubusercontent.com/10650777/188182966-2f855f51-b506-4555-a220-9359c99d282d.png)
+
 
 * Install build dependencies:
 
-	```
+  ```
   sudo apt install clang llvm pkg-config libelf1 libelf-dev zlib1g-dev
   ```
-* Install Build 
+* Install submodule dependencies (libbpf-bootstrap) and build
+
+  ```
+  make init && make
+  ```
 
 
 
