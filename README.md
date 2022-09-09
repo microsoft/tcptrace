@@ -27,6 +27,10 @@ TCP Trace consists of two parts; eBPF objects (programs, maps) and a user-space 
   ```
   make init && make
   ```
+* Run the PoC binary
+  ```
+  sudo ./src/tcp_tracing
+  ```
 
 
 
